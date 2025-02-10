@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGF</title>
+  <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=attach_money" />
+
+</head>
+
+<body id="relatorios">
+    <div class="header-container">
+      <header id="header" class="container">
+        <div>
+          <img src="../img/logo.png" alt="logo-SGF" id="header-logo">
+          <section id="select-pags">
+            <a href="principal.html">
+              <p class="fonte2-p corA5">HOME</p>
+            </a>
+            <a href="">
+              <p class="fonte2-p corA5 detalhe1">RELATÓRIOS</p>
+            </a>
+            <a href="minhaconta.html">
+              <p class="fonte2-p corA5">MINHA CONTA</p>
+            </a>
+          </section>
+        </div>
+        <a href="../index.html" class="button2" onclick="loginout()">
+          <img src="../img/icon-logout.svg" alt="icone">
+          <p class="fonte2-pp corA1">Sair</p>
+        </a>
+      </header>
+    </div>
+    <main id="relatorios-main" class="container">
+      <h1 class="fonte1-x corA5">Relatórios e dashboard</h1>
+      <h2 class="fonte2-p corA5">Analise e compare seus gastos</h2>
+      
+      <button id="buttonAno" class="button5">
+        <span>
+          <p class="fonte2-pp corA1">2025</p>
+          <img src="../img/icon-downA1.svg">
+        </span>
+
+        <div id="ano-options" class="menuToggle3 fonte2-pp corA1 button5">
+          <label for="ano-2025" onclick="atualizarNavP(); closeModal()">
+            2025
+            <input type="radio" name="ano" id="ano-2025" value="2025">
+          </label>
+          <label for="ano-2024" onclick="atualizarNavP(); closeModal()">
+            2024
+            <input type="radio" name="ano" id="ano-2024" value="2024">
+          </label>
+        </div>
+
+      </button>
+
+      <button id="buttonMes" class="button4">
+        <span>
+          <p class="fonte2-pp corA5">Fevereiro</p>
+          <img src="../img/icon-down.svg">
+        </span>
+
+        <div id="mes-options" class="fonte2-pp corA5 button4">
+          <label for="mes-01" onclick="atualizarNavP(); closeModal()">
+            Janeiro
+            <input type="radio" name="mes" id="mes-01" value="Janeiro">
+          </label>
+          <label for="mes-02" onclick="atualizarNavP(); closeModal()">
+            Fevereiro
+            <input type="radio" name="mes" id="mes-02" value="Fevereiro">
+          </label>
+          <label for="mes-03" onclick="atualizarNavP(); closeModal()">
+            Março
+            <input type="radio" name="mes" id="mes-03" value="Março">
+          </label>
+          <label for="mes-04" onclick="atualizarNavP(); closeModal()">
+            Abril
+            <input type="radio" name="mes" id="mes-04" value="Abril">
+          </label>
+          <label for="mes-05" onclick="atualizarNavP(); closeModal()">
+            Maio
+            <input type="radio" name="mes" id="mes-05" value="Maio">
+          </label>
+          <label for="mes-06" onclick="atualizarNavP(); closeModal()">
+            Junho
+            <input type="radio" name="mes" id="mes-06" value="Junho">
+          </label>
+          <label for="mes-07" onclick="atualizarNavP(); closeModal()">
+            Julho
+            <input type="radio" name="mes" id="mes-07" value="Julho">
+          </label>
+          <label for="mes-08" onclick="atualizarNavP(); closeModal()">
+            Agosto
+            <input type="radio" name="mes" id="mes-08" value="Agosto">
+          </label>
+          <label for="mes-09" onclick="atualizarNavP(); closeModal()">
+            Setembro
+            <input type="radio" name="mes" id="mes-09" value="Setembro">
+          </label>
+          <label for="mes-10" onclick="atualizarNavP(); closeModal()">
+            Outubro
+            <input type="radio" name="mes" id="mes-10" value="Outubro">
+          </label>
+          <label for="mes-11" onclick="atualizarNavP(); closeModal()">
+            Novembro
+            <input type="radio" name="mes" id="mes-11" value="Novembro">
+          </label>
+          <label for="mes-12" onclick="atualizarNavP(); closeModal()">
+            Dezembro
+            <input type="radio" name="mes" id="mes-12" value="Dezembro">
+          </label>
+        </div>
+      </button>
+
+      <span id="insuf-dados" class="fonte2-pp corC3">Dados insuficiente para o periodo escolhido!</span>
+
+      <section id="dashboard">
+        <div class="graficos">
+          <canvas id="grafico1" width="300" height="300"></canvas>
+        </div>
+      </section>
+      
+    </main>
+    <div class="footer-container">
+      <footer id="footer" class="container">
+      </footer>
+    </div>
+  </span>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/relatorios.js"></script>
+  <script src="../js/loginout.js"></script>
+
+</body>
+
+</html>

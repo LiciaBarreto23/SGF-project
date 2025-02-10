@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGF</title>
+  <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=attach_money" />
+
+</head>
+
+<body id="principal">
+  <span class="body">
+    <div class="header-container">
+      <header id="header" class="container">
+        <div>
+          <img src="../img/logo.png" alt="logo-SGF" id="header-logo">
+          <section id="select-pags">
+            <a href="">
+              <p class="fonte2-p corA5 detalhe1">HOME</p>
+            </a>
+            <a href="relatorios.html">
+              <p class="fonte2-p corA5">RELATÓRIOS</p>
+            </a>
+            <a href="minhaconta.html">
+              <p class="fonte2-p corA5">MINHA CONTA</p>
+            </a>
+          </section>
+        </div>
+        <a href="../index.html" class="button2" onclick="loginout()">
+          <img src="../img/icon-logout.svg" alt="icone">
+          <p class="fonte2-pp corA1">Sair</p>
+        </a>
+      </header>
+    </div>
+    <main id="principal-main" class="container">
+      <h1 class="fonte1-x corA5">Controle financeiro</h1>
+      <section id="principal-valores">
+        <div class="entradas">
+          <div>
+            <p class="fonte2-pp corA4">Entradas</p>
+            <img src="../img/icon-arrowup.svg" alt="ArrowUp">
+          </div>
+          <p id="entradas-resultado" class="fonte1-m corB2">R$ 0</p>
+        </div>
+        <div class="saidas">
+          <div>
+            <p class="fonte2-pp corA4">Saidas</p>
+            <img src="../img/icon-arrowdown.svg" alt="ArrowDown">
+          </div>
+          <p id="saidas-resultado" class="fonte1-m corB2">R$ 0</p>
+        </div>
+        <div class="total borderCorC2">
+          <div>
+            <p class="fonte2-pp corA4">Total</p>
+            <span class="material-symbols-rounded corC2">attach_money</span>
+          </div>
+          <p id="total-resultado" class="fonte1-m corB2">R$ 0</p>
+        </div>
+      </section>
+      <section id="principal-tabela">
+        <div class="tabela-buttons">
+          <button class="button3 addTransacao">
+            <p class="fonte2-pp corA1">Adicionar transação</p>
+            <img src="../img/icon-add.svg">
+          </button>
+          <button class="button4 navagation">
+            <span>
+              <p class="fonte2-pp corA5">Ordenar</p>
+              <img src="../img/icon-down.svg">
+            </span>
+            <div class="menuToggle">
+              <ul class="fonte2-pp corA1">
+                <li id="porData" onclick="ordenarData()">Data</li>
+                <li id="porCategoria"  onclick="ordenarCategoria()">Categoria</li>
+                <li id="maisRecente" onclick="ordenarMaisRecente()" class="ordenarEscolhido select">Adicionados mais recentes</li>
+                <li id="maisAntiga" onclick="ordenarMaisAntigo()">Adicionados mais antigos</li>
+                <!-- <li id="porCategoria" onclick="ordenarEscolhido('porCategoria')">Categoria</li> -->
+              </ul>
+            </div>
+          </button>
+        </div>
+        <div class="tabela-titulo detalhe1">
+          <p class="fonte1-p corB2 bold">Titulo</p>
+          <p class="fonte1-p corB2 bold">Valor</p>
+          <p class="fonte1-p corB2 bold">Categoria</p>
+          <p class="fonte1-p corB2 bold">Data</p>
+          <p class="fonte1-p corB2 bold">Gerenciar</p>
+        </div>
+        <section id="tabela">
+
+        </section>
+      </section>
+    </main>
+    <div class="footer-container">
+      <footer id="footer" class="container">
+      </footer>
+    </div>
+  </span>
+
+  <div id="modal" class="modal ">
+    <button class="modal-close"><img src="../img/icon-close.svg"></button>
+    <h2 class="fonte1-x corC1 bold">Adicionar transação</h2>
+    <form action="" class="modal-form" id="form-adicionarTransacao">
+      <span>
+        <label for="novo-titulo" class="fonte1-p corA5">Titulo:</label>
+        <input type="text" name="novo-titulo" id="novo-titulo" required>
+      </span>
+      <span>
+        <label for="novo-valor" class="fonte1-p corA5">Valor:</label>
+        <input type="number" name="novo-valor" id="novo-valor" required>
+      </span>
+      <span class="spanTipo">
+        <input type="radio" name="novo-tipo" id="novo-tipo-entrada" value="Entrada" required>
+        <label for="novo-tipo-entrada" class="fonte2-pp corA5">Entrada</label>
+        <input type="radio" name="novo-tipo" id="novo-tipo-saida" value="Saida" required>
+        <label for="novo-tipo-saida">Saída</label>
+      </span>
+      <span class="spanCategoria">
+        <label for="novo-categoria" class="fonte1-p corA5">Categoria:</label>
+        <div class="inputCategoria">
+          <span id="inputCategoria">
+            <p class="navagation2">Escolha uma categoria</p>
+            <img src="../img/icon-down.svg" alt="">
+          </span>
+          <div id="categoria-options" class="menuToggle2 fonte2-pp corA5">
+            <label for="categoria-Alimentação" onclick="categoriaEscolhida(this)">
+              Alimentação
+              <input type="radio" name="novo-categoria" id="categoria-Alimentação" value="Alimentação" required>
+            </label>
+            <label for="categoria-Educação" onclick="categoriaEscolhida(this)">
+              Educação
+              <input type="radio" name="novo-categoria" id="categoria-Educação" value="Educação" required>
+            </label>
+            <label for="categoria-Lazer" onclick="categoriaEscolhida(this)">
+              Lazer
+              <input type="radio" name="novo-categoria" id="categoria-Lazer" value="Lazer" required>
+            </label>
+            <label for="categoria-Moradia" onclick="categoriaEscolhida(this)">
+              Moradia
+              <input type="radio" name="novo-categoria" id="categoria-Moradia" value="Moradia" required>
+            </label>
+            <label for="categoria-Pessoal" onclick="categoriaEscolhida(this)">
+              Pessoal
+              <input type="radio" name="novo-categoria" id="categoria-Pessoal" value="Pessoal" required>
+            </label>
+            <label for="categoria-Saude" onclick="categoriaEscolhida(this)">
+              Saude
+              <input type="radio" name="novo-categoria" id="categoria-Saude" value="Saude" required>
+            </label>
+            <label for="categoria-Transporte" onclick="categoriaEscolhida(this)">
+              Transporte
+              <input type="radio" name="novo-categoria" id="categoria-Transporte" value="Transporte" required>
+            </label>
+            <label for="categoria-Trabalho" onclick="categoriaEscolhida(this)">
+              Trabalho
+              <input type="radio" name="novo-categoria" id="categoria-Trabalho" value="Trabalho" required>
+            </label>
+            <label for="categoria-Outros" onclick="categoriaEscolhida(this)">
+              Outros
+              <input type="radio" name="novo-categoria" id="categoria-Outros" value="Outros" required>
+            </label>
+          </div>
+        </div>
+      </span>
+      <span>
+        <label for="novo-data" class="fonte1-p corA5">Data:</label>
+        <input type="date" name="novo-data" id="novo-data" required>
+      </span>
+      <span>
+        <label for="novo-descricao" class="fonte1-p corA5">Descrição:</label>
+        <textarea name="novo-descricao" id="novo-descricao" rows="4"></textarea>
+      </span>
+      <span class="spanSubmit">
+        <input type="submit" value="Adicionar" class="button1">
+      </span>
+    </form>
+  </div>
+
+  <div id="modalEdit" class="modalEdit">
+    <button class="modalEdit-close"><img src="../img/icon-close.svg"></button>
+    <h2 class="fonte1-x corC1 bold">Editar transação</h2>
+    <form action="" class="modal-formeEdit" id="form-editarTransacao">
+      <span>
+        <label for="editar-titulo" class="fonte1-p corA5">Titulo:</label>
+        <input type="text" name="editar-titulo" id="editar-titulo" required>
+      </span>
+      <span>
+        <label for="editar-valor" class="fonte1-p corA5">Valor:</label>
+        <input type="number" name="editar-valor" id="editar-valor" required>
+      </span>
+      <span class="spanTipo">
+        <input type="radio" name="editar-tipo" id="editar-tipo-Entrada" value="Entrada" required>
+        <label for="editar-tipo-Entrada" class="fonte2-pp corA5">Entrada</label>
+        <input type="radio" name="editar-tipo" id="editar-tipo-Saida" value="Saida" required>
+        <label for="editar-tipo-Saida">Saída</label>
+      </span>
+      <span class="spanCategoria">
+        <label for="editar-categoria" class="fonte1-p corA5">Categoria:</label>
+        <div class="EditinputCategoria">
+          <span id="EditinputCategoria">
+            <p class="navagation3">Escolha uma categoria</p>
+            <img src="../img/icon-down.svg" alt="">
+          </span>
+          <div id="EditCategoria-options" class="menuToggle3 fonte2-pp corA5">
+            <label for="EditCategoria-Alimentação" onclick="EditCategoriaEscolhida(this)">
+              Alimentação
+              <input type="radio" name="editar-categoria" id="EditCategoria-Alimentação" value="Alimentação" required>
+            </label>
+            <label for="EditCategoria-Educação" onclick="EditCategoriaEscolhida(this)">
+              Educação
+              <input type="radio" name="editar-categoria" id="EditCategoria-Educação" value="Educação" required>
+            </label>
+            <label for="EditCategoria-Lazer" onclick="EditCategoriaEscolhida(this)">
+              Lazer
+              <input type="radio" name="editar-categoria" id="EditCategoria-Lazer" value="Lazer" required>
+            </label>
+            <label for="EditCategoria-Moradia" onclick="EditCategoriaEscolhida(this)">
+              Moradia
+              <input type="radio" name="editar-categoria" id="EditCategoria-Moradia" value="Moradia" required>
+            </label>
+            <label for="EditCategoria-Pessoal" onclick="EditCategoriaEscolhida(this)">
+              Pessoal
+              <input type="radio" name="editar-categoria" id="EditCategoria-Pessoal" value="Pessoal" required>
+            </label>
+            <label for="EditCategoria-Saude" onclick="EditCategoriaEscolhida(this)">
+              Saude
+              <input type="radio" name="editar-categoria" id="EditCategoria-Saude" value="Saude" required>
+            </label>
+            <label for="EditCategoria-Transporte" onclick="EditCategoriaEscolhida(this)">
+              Transporte
+              <input type="radio" name="editar-categoria" id="EditCategoria-Transporte" value="Transporte" required>
+            </label>
+            <label for="EditCategoria-Trabalho" onclick="EditCategoriaEscolhida(this)">
+              Trabalho
+              <input type="radio" name="editar-categoria" id="EditCategoria-Trabalho" value="Trabalho" required>
+            </label>
+            <label for="EditCategoria-Outros" onclick="EditCategoriaEscolhida(this)">
+              Outros
+              <input type="radio" name="editar-categoria" id="EditCategoria-Outros" value="Outros" required>
+            </label>
+          </div>
+        </div>
+      </span>
+      <span>
+        <label for="editar-data" class="fonte1-p corA5">Data:</label>
+        <input type="date" name="editar-data" id="editar-data" required>
+      </span>
+      <span>
+        <label for="editar-descricao" class="fonte1-p corA5">Descrição:</label>
+        <textarea name="editar-descricao" id="editar-descricao" rows="4"></textarea>
+      </span>
+      <span class="spanSubmit">
+        <input type="submit" value="Editar" class="button1">
+      </span>
+    </form>
+  </div>
+
+  <script src="../js/principal.js"></script>
+  <script src="../js/loginout.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGF</title>
+  <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+<body id="cadastro">
+  <div class="body">
+    <div class="header-container">
+      <header id="header" class="container">
+        <div>
+          <img src="../img/logo.png" alt="logo-SGF" id="header-logo">
+          <section id="select-pags">
+            <a href="principal.html">
+              <p class="fonte2-p corA5">HOME</p>
+            </a>
+            <a href="relatorios.html">
+              <p class="fonte2-p corA5">RELATÓRIOS</p>
+            </a>
+            <a href="minhaconta.html">
+              <p class="fonte2-p corA5 detalhe1">MINHA CONTA</p>
+            </a>
+          </section>
+        </div>
+        <a href="../index.html" class="button2" onclick="loginout()">
+          <img src="../img/icon-logout.svg" alt="icone">
+          <p class="fonte2-pp corA1">Sair</p>
+        </a>
+      </header>
+    </div>
+    <main id="editarconta-main" class="container">
+        <h1 class=".fonte1-x corA5 bold">Alterar Dados</h1>
+        <p id="mnsg-edit" class="fonte2-pp">x</p>
+        <section id="editarconta-sessao">
+          <form id="editarconta-form">
+            <input type="text" placeholder="Nome Completo" required class="
+            default-input" id="editUser-nome">
+            <input type="text" placeholder="Telefone" required class="
+            default-input" id="editUser-telefone">
+            <input type="text" placeholder="CPF" required class="
+            default-input" id="editUser-cpf">
+            <input type="email" placeholder="Email" required class="
+            default-input" id="editUser-email">
+            <input type="password" placeholder="Nova senha"  class="
+            default-input" id="editUser-senha">
+            <input type="password" placeholder="Confirme sua senha"  class="
+            default-input" id="editUser-confSenha">
+            <input type="submit" value="Editar" class="button1" id="button-registrar">
+          </form>
+        </section>
+    
+    
+    </main>
+    <div class="footer-container">
+      <footer id="footer" class="container">
+    
+      </footer>
+    </div>
+  </div>    
+  
+
+  <script src="../js/editarconta.js"></script>
+  <script src="../js/loginout.js"></script>
+
+  <script>
+  
+  </script>
+</body>
+</html> 

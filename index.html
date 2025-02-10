@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGF</title>
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="login">
+  <div class="header-container">
+    <header id="header" class="container">
+      <img src="img/logo.png" alt="logo-SGF" id="header-logo">
+    </header>
+  </div>
+  <main id="home" class="container">
+    <section id="home-text">
+      <h1 class="fonte1-xl corA5">Seu sistema de <br> gestão financeira<span class="corC1">.</span></h1>
+      <p class="fonte2-m corA5">Monitore e organize seus gastos <br> qualquer lugar!</p>
+      <img src="img/grafico.png" alt="grafico-decorativo">
+    </section>
+    <section id="home-login">
+      <div id="div-login" class="modalAtivo">
+        <h2 class="fonte1-x corA5 bold">Bem Vindo(a) de volta!</h2>
+        <p id="mnsg-login" class="fonte2-pp corC3">x</p>
+        <div class="div-form">
+          <form id="form-login" >
+            <input type="text" id="login-email" placeholder="Email" required class="
+            default-input">
+            <input type="password" id="login-senha" placeholder="Senha" required class="
+            default-input">
+            <input type="submit" class="button1" value="Entrar">
+          </form>
+        </div>
+        <span class="fonte1-pp corA4" id="esqueciSenha" onclick="esqueciSenhaClick()">Esqueci minha senha</span>
+        <p class="fonte1-p corA5">Não tem conta?
+          <a href="pags/cadastro.html" class="bold">Cadastre-se</a>
+        </p>
+      </div>
+
+      <div id="div-email" class="">
+        <img src="img/icon-close1.svg" id="div-email-Close" onclick="closeDivEmail()">
+        <h2 class="fonte1-x corA5 bold">Recuperar Senha</h2>
+        <div class="div-form">
+          <span id="mnsg-email" class="fonte2-pp corC3 bold ">Email não encontrado!</span>
+          <form id="form-email">
+            <span>
+              <label for="confEmail" class="fonte2-p corA5" >Confirme seu email:</label>
+              <input type="text" id="confEmail">
+            </span>
+            <input type="submit" class="button1" value="Enviar" id="bttn1">
+          </form>
+        </div>
+
+        <div id="div-senha" class="">
+          <h3 class="fonte1-x corA5 bold">Olá, <span>x</span></h3>
+          <div class="div-form">
+            <form id="form-senha">
+              <span>
+                <input type="password" id="nova-senha" placeholder="Nova senha" required class="
+                default-input">
+                <input type="password" id="ConfNova-senha" placeholder="Confirme sua senha" required class="
+                default-input">
+              </span>
+              <input type="submit" class="button1" value="Redefinir">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      
+      
+    </section>
+  </main>
+  <div class="footer-container">
+    <footer id="footer" class="container">
+    </footer>
+  </div>    
+
+  <script src="js/login.js"></script>
+</body>
+</html>

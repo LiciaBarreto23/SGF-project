@@ -1,0 +1,152 @@
+#home{
+  height: calc(100vh - 50px - 40px);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#home-text{
+  align-self: center;
+  position: relative;
+}
+#home-text h1{
+  line-height: 3rem;
+  padding-bottom: 10px;
+}
+#home-text p{
+  margin-bottom: 100px;
+}
+
+#home-text img{
+  position: absolute;
+  z-index: -1;
+  bottom: -110px;
+  right: 50px;
+}
+
+#home-login{
+  width: 500px;
+  justify-self: center;
+
+  padding: 50px;
+  border-radius: 0.625rem;
+  border: 2px solid #450A6A;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#home-login h2{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#home-login .div-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#home-login .div-form input[type=submit]{
+  align-self: center;
+}
+
+#home-login a:hover{
+  text-decoration: underline;
+}
+
+#esqueciSenha{
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#esqueciSenha:hover{
+  text-decoration: underline;
+}
+
+#mnsg-login {
+  display: none;
+  font-weight: 700;
+  text-align: start;
+  margin-bottom: 5px;
+}
+#mnsg-login.pAtivo{
+  display: block;
+}
+
+#div-email > img {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  cursor: pointer;
+}
+
+#div-email input[type=text]{
+  border: 2px solid var(--corA3);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 100%;
+  height: 40px;
+
+  color: var(--corA5);
+  font-family: var(--fonte2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#form-senha span{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#div-senha h3{
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#div-email:has(#div-senha.modalAtivo) #bttn1{
+  display: none;
+}
+#div-email:has(#div-senha.modalAtivo) #form-email input{
+  border-color: var(--corC2);
+  pointer-events: none;
+}
+
+#div-login{
+  display: none;
+}
+
+#div-login.modalAtivo{
+  display: block;
+  transition: all 0.3s;
+}
+
+#div-email{
+  display: none;
+  position: relative;
+}
+
+#div-email.modalAtivo{
+  display: block;
+  transition: all 0.3s;
+}
+
+#div-senha{
+  display: none;
+  position: relative;
+  margin-top: 20px;
+}
+
+#div-senha.modalAtivo{
+  display: block;
+  transition: all 0.3s;
+}
+
+#mnsg-email, #mnsg-senha{
+  display:  none;
+}
+#mnsg-email.pAtivo, #mnsg-senha.pAtivo{
+  display: block;
+  padding-bottom: 5px;
+}

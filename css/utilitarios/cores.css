@@ -1,0 +1,37 @@
+.corA1{
+  color: var(--corA1);
+}
+.corA2{
+  color: var(--corA2);
+}
+.corA3{
+  color: var(--corA3);
+}
+.corA4{
+  color: var(--corA4);
+}
+.corA5{
+  color: var(--corA5);
+}
+.corB1{
+  color: var(--corB1);
+}
+.corB2{
+  color: var(--corB2);
+}
+.corC1{
+  color: var(--corC1);
+}
+.corC2{
+  color: var(--corC2);
+}
+.corC3{
+  color: var(--corC3);
+}
+
+.borderCorC2{
+  border-color: var(--corC2) !important;
+}
+.borderCorC3{
+  border-color: var(--corC3) !important;
+}

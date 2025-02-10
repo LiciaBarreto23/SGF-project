@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGF</title>
+  <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+
+<body id="cadastro">
+  <div class="body ">
+    <div class="header-container">
+      <header id="header" class="container">
+        <img src="../img/logo.png" alt="logo-SGF" id="header-logo">
+        <a href="../index.html" class="button2">
+          <p class="fonte2-pp corA1">Entrar</p>
+        </a>
+      </header>
+    </div>
+    <main id="cadastro-main" class="container">
+      <h1 class=".fonte1-x corA5 bold">Cadastre-se</h1>
+      <section id="cadastro-sessao">
+        <form id="cadastro-form">
+          <input type="text" id="nome" placeholder="Nome Completo" required class="
+            default-input">
+          <input type="text" id="telefone" placeholder="Telefone" required class="
+            default-input">
+          <input type="text" id="cpf" placeholder="CPF" required class="
+            default-input">
+          <input type="email" id="email" placeholder="Email" required class="
+            default-input">
+          <input type="password" id="senha" placeholder="Senha" required class="
+            default-input">
+          <input type="password" id="senhaConf" placeholder="Confirme sua senha" required class="
+            default-input">
+          <input type="submit" value="Registrar" class="button1" id="button-registrar">
+        </form>
+      </section>
+      <img src="../img/grafico.png" alt="Grafico Decorativo">
+    </main>
+    <div class="footer-container">
+      <footer id="footer" class="container">
+      </footer>
+    </div>
+  </div>
+
+  <div id="cadastro-modal" class="">
+    <h3 class="fonte1-m corA5 bold">Cadastro realizado com sucesso!</h3>
+    <p class="fonte2-p corA5">Volte para tela de login e entre com sua conta.</p>
+    <p id="cadastro-modal-pbutton">
+      <button class="button2 fonte2-p corA1" id="cadastro-modal-button">OK</button>
+    </p>
+  </div>
+
+  <script src="../js/cadastro.js"></script>
+
+</body>
+
+</html>

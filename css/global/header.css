@@ -1,0 +1,40 @@
+.header-container{
+  box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#header{ 
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#header div{
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+
+#select-pags{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+#select-pags a{
+  position: relative;
+}
+#select-pags a p{
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+#select-pags a:hover p:not(.detalhe1){
+  color: var(--corC1);
+  transition: all 0.3s;
+}
+
+#header-logo{
+  width: 5rem;
+}

@@ -1,0 +1,422 @@
+#principal{
+  position: relative;
+}
+
+#principal p{
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#principal-main{
+  min-height: calc(100vh - 50px - 40px);
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+#principal-main h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#principal-valores{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+#principal-valores > div{
+  width: 100%;
+  padding: 10px;
+  border-radius: 0.625rem;
+  border: 2px solid var(--corA2);
+  box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+#principal-valores > div > div{
+  display: flex;
+  justify-content: space-between;
+}
+#principal-valores > div > p{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#principal-valores .total span{
+  font-size: 22px;
+}
+
+#principal-tabela .tabela-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.navagation{
+  position: relative;
+}
+.navagation.menuAtivo img{
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+.menuToggle{
+  display: none;
+  position: absolute;
+  width: 140px;
+  right: 0px;
+  top: 32px;
+  background-color: var(--corC1);
+  z-index: 10;
+  border-radius: 0.625rem;
+  transition: ease-in-out 0.5s;
+}
+
+.menuToggle.menuAtivo{
+  display: block;
+}
+
+.menuToggle ul{
+  display: flex;
+  flex-direction: column;
+}
+.menuToggle ul li{
+  padding: 5px;
+  border-bottom: 1px solid var(--corA4);
+}
+
+.menuToggle ul li:hover{
+  background-color: #5b1a83; 
+
+}
+.menuToggle ul li:first-child{
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+.menuToggle ul li:last-child{
+  border-radius: 0 0 0.625rem 0.625rem;
+  border-bottom: none;
+
+}
+
+.menuToggle ul li.select{
+  color: var(--corA1);
+  background-color: #5b1a83; 
+}
+
+
+#principal-tabela .tabela-titulo{
+  position: relative;
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr 2fr 1fr;
+}
+#principal-tabela .tabela-titulo p:last-child{
+  text-align: center;
+}
+
+#tabela{
+  border: 1px solid var(--corA2);
+}
+
+.tabela-item:nth-of-type(odd){
+  background-color: var(--corA2);
+}
+
+.tabela-item{
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.tabela-item-texto{
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr 2fr 1fr;
+}
+.tabela-item-texto p:first-child::first-letter{
+  text-transform: capitalize;
+}
+
+.tabela-item-texto > div {
+  text-align: center;
+}
+.tabela-item-texto > div > button{
+  background-color: inherit;
+  margin-left: 8px;
+}
+
+.tabela-item-descricao p::first-letter{
+  text-transform: capitalize;
+}
+.tabela-item-descricao{
+  padding-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#modal{
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  padding: 20px;
+  width: 40%;
+  max-width: 800px;
+  min-width: 600px;
+
+  background-color: var(--corA1);
+}
+
+#modal.modalAtivo{
+  visibility: visible;
+}
+
+.body.modalAtivo{
+  background-color: rgba(109, 109, 109, 0.3) !important;
+  display: block;
+  z-index: 20;
+  pointer-events: none;
+}
+
+#modal h2{
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#modal .modal-form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-form > span{
+  display: flex;
+  flex-direction: column;
+}
+.modal-form .spanTipo{
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.modal-form .spanTipo label{
+  margin-right: 10px;
+}
+.modal-form input:not(input[type='radio'], input[type='submit']){
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+  height: 35px;
+
+  color: var(--corA5);
+  font-family: var(--fonte2);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.modal-form textarea {
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+}
+.modal-form input::placeholder{
+  color: var(--corA3);
+  font-family: var(--fonte2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.modal-form .spanSubmit input{
+  margin-top: 16px;
+  align-self: center;  
+}
+
+.modal-form .inputCategoria {
+  color: var(--corA4);
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+  min-height: 35px;
+  
+}
+.modal-form .inputCategoria > span {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.modal-form .inputCategoria #categoria-options{
+  display: none;
+}
+.modal-form .inputCategoria #categoria-options > label{
+  padding: 2.5px 5px;
+  border-radius: 0.3rem;
+}
+.modal-form .inputCategoria #categoria-options > label:hover{
+  background-color: var(--corA2);
+}
+
+.modal-form .inputCategoria #categoria-options > label:has(input:checked){
+  border-left: 5px solid var(--corC1);
+  border-radius: 0 0.3rem 0.3rem 0 ;
+  background-color: var(--corA2);
+
+}
+.modal-form .inputCategoria #categoria-options > label input{
+  visibility: hidden;
+}
+
+.modal-form .inputCategoria #categoria-options.modalAtivo1{
+  display: flex;
+  flex-direction: column;
+}
+.modal-form .inputCategoria #inputCategoria.modalAtivo1 img{
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+.modal-close{
+  background-color: var(--corC3);
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  position: absolute;
+  top: -13px;
+  right: -13px;
+}
+
+
+#modalEdit{
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  padding: 20px;
+  width: 40%;
+  max-width: 800px;
+  min-width: 600px;
+
+  background-color: var(--corA1);
+}
+
+#modalEdit.modalAtivo{
+  visibility: visible;
+}
+
+#modalEdit h2{
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#modalEdit .modal-formeEdit{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-formeEdit > span{
+  display: flex;
+  flex-direction: column;
+}
+.modal-formeEdit .spanTipo{
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+.modal-formeEdit .spanTipo label{
+  margin-right: 10px;
+}
+.modal-formeEdit input:not(input[type='radio'], input[type='submit']){
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+  height: 35px;
+
+  color: var(--corA5);
+  font-family: var(--fonte2);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.modal-formeEdit textarea {
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+}
+.modal-formeEdit input::placeholder{
+  color: var(--corA3);
+  font-family: var(--fonte2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.modal-formeEdit .spanSubmit input{
+  margin-top: 16px;
+  align-self: center;  
+}
+
+.modal-formeEdit .EditinputCategoria {
+  color: var(--corA4);
+  border: 1px solid var(--corA2);
+  padding: 5px 10px;
+  border-radius: 0.625rem;
+  width: 60%;
+  min-height: 35px;
+  
+}
+.modal-formeEdit .EditinputCategoria > span {
+display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.modal-formeEdit .EditinputCategoria #EditCategoria-options{
+  display: none;
+}
+.modal-formeEdit .EditinputCategoria #EditCategoria-options > label{
+  padding: 2.5px 5px;
+  border-radius: 0.3rem;
+}
+.modal-formeEdit .EditinputCategoria #EditCategoria-options > label:hover{
+  background-color: var(--corA2);
+}
+
+.modal-formeEdit .EditinputCategoria #EditCategoria-options > label:has(input:checked){
+  border-left: 5px solid var(--corC1);
+  border-radius: 0 0.3rem 0.3rem 0 ;
+  background-color: var(--corA2);
+}
+.modal-formeEdit .EditinputCategoria #EditCategoria-options > label input{
+  visibility: hidden;
+}
+
+.modal-formeEdit .EditinputCategoria #EditCategoria-options.modalAtivo1{
+  display: flex;
+  flex-direction: column;
+}
+.modal-formeEdit .EditinputCategoria #EditinputCategoria.modalAtivo1 img{
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+.modalEdit-close{
+  background-color: var(--corC3);
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  position: absolute;
+  top: -13px;
+  right: -13px;
+}

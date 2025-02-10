@@ -1,0 +1,52 @@
+.bold{
+  font-weight:600;
+}
+
+.ligth{
+  font-weight:300;
+}
+
+.fonte1-xl{
+  font-family: var(--fonte1);
+  font-size: 3rem;
+}
+.fonte1-x{
+  font-family: var(--fonte1);
+  font-size: 2rem;
+}
+.fonte1-m{
+  font-family: var(--fonte1);
+  font-size: 1.25rem;
+}
+.fonte1-p{
+  font-family: var(--fonte1);
+  font-size: 1.125rem;
+}
+.fonte1-pp{
+  font-family: var(--fonte1);
+  font-size: 1rem;
+}
+
+
+.fonte2-xl{
+  font-family: var(--fonte2);
+  font-size: 3rem;
+}
+.fonte2-x{
+  font-family: var(--fonte2);
+  font-size: 2rem;
+}
+.fonte2-m{
+  font-family: var(--fonte2);
+  font-size: 1.25rem;
+}
+.fonte2-p{
+  font-family: var(--fonte2);
+  font-size: 1.125rem;
+}
+.fonte2-pp{
+  font-family: var(--fonte2);
+  font-size: 1rem;
+}
+
+

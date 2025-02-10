@@ -1,0 +1,84 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/*CSS*/
+@import 'css/utilitarios/componentes.css';
+@import 'css/utilitarios/cores.css';
+@import 'css/utilitarios/tipografia.css';
+
+@import 'css/global/header.css';
+@import 'css/global/footer.css';
+
+@import 'css/login-cadastro/login.css';
+@import 'css/login-cadastro/cadastro.css';
+
+@import 'css/usuario/principal.css';
+@import 'css/usuario/relatorios.css';
+@import 'css/usuario/minhaconta.css';
+@import 'css/usuario/editarconta.css';
+
+
+
+
+:root{
+  --corA1: #f7f7f7;
+  --corA2: #d9d9d9;
+  --corA3: #919191;
+  --corA4: #6d6d6d;
+  --corA5: #141414;
+  --corB1: #ffffff;
+  --corB2: #000000;
+  --corC1: #450A6A;
+  --corC2: #358A00;
+  --corC3: #C30000;
+  --fonte1: "Poppins", Arial, sans-serif;
+  --fonte2: "Roboto Mono", Helvetica, sans-serif;
+}
+
+/*Estilos gerais*/
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html, body{
+  overflow-x: hidden !important;
+}
+body{
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+  padding: 0px;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+button{
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+
+details>summary {
+ 
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none
+}

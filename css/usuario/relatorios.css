@@ -1,0 +1,127 @@
+#relatorios-main {
+  min-height: calc(100vh - 50px - 40px);
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+#relatorios-main h1 {
+  text-align: center;
+}
+#relatorios-main h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#relatorios-main #dashboard {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 50px;
+}
+#relatorios-main #dashboard div:has(#grafico3) {
+  grid-column: 1/-1;
+}
+
+#buttonAno {
+  position: relative;
+  width: 80px;
+  height: 34px;
+}
+
+#buttonAno:has(#ano-options.modalAtivo) {
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+#buttonAno:has(#ano-options.modalAtivo) img {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+#buttonAno #ano-options {
+  position: absolute;
+  left: 0px;
+  display: none;
+  width: inherit;
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+
+#buttonAno #ano-options.modalAtivo {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttonAno #ano-options label {
+  width: 100%;
+  padding: 2.5px 5px;
+  border-radius: 0.3rem;
+}
+#buttonAno #ano-options label:hover {
+  background-color: #5b1a83;
+}
+#buttonAno #ano-options label:has(input:checked) {
+  border-left: 3px solid var(--corA1);
+  border-radius: 0 0.3rem 0.3rem 0;
+  background-color: #5b1a83;
+}
+
+#buttonAno #ano-options input {
+  display: none;
+}
+
+#buttonMes {
+  position: relative;
+  width: 125px;
+  background-color: var(--corA1);
+  height: 34px;
+}
+
+#buttonMes:has(#mes-options.modalAtivo) {
+  border-radius: 0.625rem 0.625rem 0 0;
+  border-bottom: none;
+}
+#buttonMes:has(#mes-options.modalAtivo) img {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+#buttonMes #mes-options {
+  position: absolute;
+  left: -2px;
+
+  display: none;
+  width: inherit;
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+
+#buttonMes #mes-options.modalAtivo {
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+}
+
+#buttonMes #mes-options label {
+  width: 100%;
+  padding: 2.5px 5px;
+  border-radius: 0.3rem;
+}
+#buttonMes #mes-options label:hover {
+  background-color: var(--corA2);
+}
+#buttonMes #mes-options label:has(input:checked) {
+  border-left: 3px solid var(--corC1);
+  border-radius: 0 0.3rem 0.3rem 0;
+  background-color: var(--corA2);
+}
+
+#buttonMes #mes-options input {
+  display: none;
+}
+
+#insuf-dados {
+  display: none;
+  margin-top: 5px;
+  font-weight: 700;
+}
+#insuf-dados.pAtivo {
+  display: block;
+}
